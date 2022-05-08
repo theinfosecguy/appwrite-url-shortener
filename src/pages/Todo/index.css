@@ -60,7 +60,6 @@ form {
 }
 
 .output-container {
-  width: 350px;
   height: 5rem;
 }
 
@@ -73,6 +72,6 @@ form {
 
 svg.copy-icon {
   position: relative;
-  right: -14%;
+  right: -4%;
   top: -22px;
 }

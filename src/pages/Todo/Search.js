@@ -126,16 +126,16 @@ const Search = ({ user, dispatch }) => {
 
         {output.success && (
           <div
-            class="output-container mt-12 w-full md:w-auto"
+            class="output-container mt-12 md:w-auto"
             onClick={() => handleCopy(domainURL + "/" + output.url)}
           >
-            <div class="relative inline-flex group w-full h-full">
+            <div class="relative inline-flex group h-full">
               <div class="absolute transitiona-all duration-1000 opacity-50 -inset-px bg-gradient-to-r from-[#ffbc7d] via-[#ff9736] to-[#ff7a00] rounded-xl blur-lg filter  group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200"></div>{" "}
               <button
                 aria-label="Primary button"
                 title=""
                 role="button"
-                class="output w-full relative inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white transition-all duration-200 bg-gray-900 rounded-md focus:outline-none"
+                class="output relative inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white transition-all duration-200 bg-gray-900 rounded-md focus:outline-none"
               >
                 {domainURL}/{output.url}
                 {isCopied ? (
