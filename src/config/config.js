@@ -4,4 +4,4 @@ export const Server = {
   collectionID: process.env.REACT_APP_COLLECTION_ID,
 };
 
-export const domainURL = "http://localhost:3000";
+export const domainURL = process.env.REACT_APP_DOMAIN_URL;
