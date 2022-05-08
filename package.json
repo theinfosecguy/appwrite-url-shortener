@@ -46,5 +46,9 @@
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.13",
     "tailwindcss": "^3.0.24"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/theinfosecguy/appwrite-url-shortener.git",
+  "author": "theinfosecguy <keshavaarav22@gmail.com>",
+  "license": "MIT"
 }
