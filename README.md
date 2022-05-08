@@ -10,21 +10,25 @@
 ## Usage
 
 1. Clone the repository using
+
 ```bash
 git clone https://github.com/theinfosecguy/appwrite-url-shortener
 ```
 
 2. Change the directory
+
 ```
 cd appwrite-url-shortener
 ```
 
 3. Create an `.env` file with following Keys
+
 ```
 REACT_APP_ENDPOINT=
 REACT_APP_PROJECT=
 REACT_APP_COLLECTION_ID=
 REACT_APP_SECRET=
+REACT_APP_DOMAIN_URL=
 ```
 
 4. Start the server
