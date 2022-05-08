@@ -1,5 +1,5 @@
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import Search from "./pages/Todo/Search";
+import Search from "./pages/StormURL/Search";
 import Login from "./pages/Auth/Login";
 import Landing from "./pages/Landing/Landing";
 import { useGetUser } from "./hooks";
