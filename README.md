@@ -39,4 +39,4 @@ yarn start
 
 ## License
 
-License - MIT
+License - [MIT](https://github.com/theinfosecguy/appwrite-url-shortener/blob/main/LICENSE)
