@@ -9,40 +9,49 @@ function Navbar({ handleLogout }) {
   const history = useHistory();
 
   return (
-    <header class="shadow-sm">
-      <div class="max-w-screen-xl p-4 mx-auto">
-        <div class="flex items-center justify-between space-x-4 lg:space-x-10">
-          <div class="flex lg:w-0 lg:flex-1">
-            <img src={Logo} alt="logo" className="h-10 w-10" />
+    <header className="shadow-sm">
+      <div className="max-w-screen-xl p-4 mx-auto">
+        <div className="flex items-center justify-between space-x-4 lg:space-x-10">
+          <div className="flex lg:w-0 lg:flex-1">
+            <a href="/">
+              <img src={Logo} alt="logo" classNameName="h-10 w-10" />
+            </a>
           </div>
 
-          <nav class="hidden space-x-8 text-sm font-medium md:flex">
-            <a class="text-gray-500" href="">
+          <nav className="hidden space-x-8 text-sm font-medium md:flex">
+            <a
+              className="text-gray-500"
+              href="https://theinfosecguy.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               About
             </a>
-            <a class="text-gray-500" href="">
-              Blog
-            </a>
-            <a class="text-gray-500" href="">
+            <a
+              className="text-gray-500"
+              href="https://github.com/theinfosecguy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Projects
             </a>
-            <a class="text-gray-500" href="">
+            <a className="text-gray-500" href="mailto:hello@theinfosecguy.xyz">
               Contact
             </a>
           </nav>
 
-          <div class="items-center justify-end flex-1 hidden space-x-4 sm:flex">
+          <div className="items-center justify-end flex-1 hidden space-x-4 sm:flex">
             {!user ? (
               <>
                 <button
-                  class="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg"
+                  className="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg"
                   onClick={() => history.push("/login")}
                 >
                   Log in
                 </button>
 
                 <a
-                  class="px-5 py-2 text-sm font-medium text-white bg-red-600 rounded-lg"
+                  className="px-5 py-2 text-sm font-medium text-white bg-orange-custom rounded-lg"
                   onClick={() => history.push("/register")}
                 >
                   Sign up
@@ -50,7 +59,7 @@ function Navbar({ handleLogout }) {
               </>
             ) : (
               <button
-                class="px-5 py-2 text-sm font-medium text-white bg-red-600 rounded-lg cursor-pointer"
+                className="px-5 py-2 text-sm font-medium text-white bg-red-600 rounded-lg cursor-pointer"
                 onClick={handleLogout}
               >
                 Logout
@@ -58,13 +67,13 @@ function Navbar({ handleLogout }) {
             )}
           </div>
 
-          <div class="lg:hidden">
+          <div className="lg:hidden">
             <button
-              class="p-2 text-gray-600 bg-gray-100 rounded-lg"
+              className="p-2 text-gray-600 bg-gray-100 rounded-lg"
               type="button"
             >
-              <span class="sr-only">Open menu</span>
-              <HiMenuAlt3 className="h-6 w-6" />
+              <span className="sr-only">Open menu</span>
+              <HiMenuAlt3 classNameName="h-6 w-6" />
             </button>
           </div>
         </div>
