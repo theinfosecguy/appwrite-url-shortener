@@ -5,6 +5,7 @@ import { BsPersonCircle } from "react-icons/bs";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useHistory } from "react-router-dom";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
 const SignUp = ({ dispatch }) => {
   const [name, setName] = useState();
@@ -50,7 +51,7 @@ const SignUp = ({ dispatch }) => {
             <div class="relative">
               <input
                 type="text"
-                class="w-[400px] p-4 pr-12 text-sm border-black-300 rounded-lg shadow-sm"
+                class="focus:outline-none w-[400px] lg:w-[430px] md:w-[430px] sm:w-[420px] p-4 pr-12 text-sm border-black-300 rounded-lg shadow-sm"
                 placeholder="Enter your name"
                 onChange={(e) => setName(e.target.value)}
               />
@@ -69,7 +70,7 @@ const SignUp = ({ dispatch }) => {
             <div class="relative">
               <input
                 type="email"
-                class="w-[400px] p-4 pr-12 text-sm border-black-300 rounded-lg shadow-sm"
+                class="focus:outline-none w-[400px] lg:w-[430px] md:w-[430px] sm:w-[420px] p-4 pr-12 text-sm border-black-300 rounded-lg shadow-sm"
                 placeholder="Enter email"
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -88,7 +89,7 @@ const SignUp = ({ dispatch }) => {
               <input
                 type={showPassword ? "text" : "password"}
                 onChange={(e) => setPassword(e.target.value)}
-                class="w-[400px] p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+                class="focus:outline-none w-[400px] lg:w-[430px] md:w-[430px] sm:w-[420px] p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                 placeholder="Enter password"
               />
 
@@ -123,12 +124,21 @@ const SignUp = ({ dispatch }) => {
               type="submit"
               disabled={!name || !email || !password}
               onClick={handleSignup}
-              class="font-medium text-white bg-red-600 inline-block px-5 py-3 ml-3 text-sm font-medium text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              class="font-medium text-white bg-orange-custom inline-block px-5 py-3 ml-3 text-sm font-medium text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Sign in
             </button>
           </div>
         </form>
+        <span
+          className="absolute inset-y-0 left-7 top-7 cursor-pointer"
+          onClick={() => history.push("/")}
+        >
+          <BsFillArrowLeftCircleFill
+            class="h-6 w-6 text-gray-400"
+            fill="#ff7a00"
+          />
+        </span>
       </div>
     </>
   );
