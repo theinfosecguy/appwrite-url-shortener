@@ -1,9 +1,14 @@
 import api from "../../api/api";
 import { Server, domainURL } from "../../config/config";
 import { AiFillDelete } from "react-icons/ai";
-import { BsArrowUpRightSquareFill } from "react-icons/bs";
+import { MdOutlineContentCopy } from "react-icons/md";
+import { TiTick } from "react-icons/ti";
+
+import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 
 const URLList = ({ item, setStale }) => {
+  const [isCopied, handleCopy] = useCopyToClipboard();
+
   const handleDelete = async (e, item) => {
     try {
       await api.deleteDocument(Server.collectionID, item["$id"]);
@@ -32,9 +37,15 @@ const URLList = ({ item, setStale }) => {
           size={20}
           onClick={(e) => handleDelete(e, item)}
         />
-        <a href="" target="_blank">
-          <BsArrowUpRightSquareFill className="text-orange-500" size={20} />
-        </a>
+        {isCopied ? (
+          <TiTick className="text-green-500" size={21} />
+        ) : (
+          <MdOutlineContentCopy
+            className="text-black-500"
+            onClick={() => handleCopy(domainURL + "/" + item["shortURL"])}
+            size={21}
+          />
+        )}
       </div>
     </li>
   );

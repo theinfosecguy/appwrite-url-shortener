@@ -9,7 +9,7 @@ import URLList from "./URLList";
 import { generateRandomString } from "../_helpers/common";
 import "./index.css";
 import { MdOutlineContentCopy } from "react-icons/md";
-import { TiTick, TiTickets } from "react-icons/ti";
+import { TiTick } from "react-icons/ti";
 import useCopyToClipboard from "../../hooks/useCopyToClipboard";
 import { toast } from "react-hot-toast";
 
@@ -25,8 +25,26 @@ const Search = ({ user, dispatch }) => {
 
   const [isCopied, handleCopy] = useCopyToClipboard();
 
+  function isValidHttpUrl(string) {
+    let url;
+
+    try {
+      url = new URL(string);
+    } catch (_) {
+      return false;
+    }
+
+    return url.protocol === "http:" || url.protocol === "https:";
+  }
+
   const handleAddURL = async (e) => {
     e.preventDefault();
+    if (currentURL) {
+      if (!isValidHttpUrl(currentURL)) {
+        toast.error("Please enter a valid URL");
+        return;
+      }
+    }
     try {
       const data = {
         shortURL: generateRandomString(),
@@ -89,7 +107,7 @@ const Search = ({ user, dispatch }) => {
       <section className="search-container max-h-screen max-w-xl mx-auto flex flex-col items-center justify-center">
         {isError && <Alert color="red" message="Something went wrong..." />}
         <div className="font-bold text-3xl md:text-5xl lg:text-6xl">
-          <h1 class="text-5xl font-extrabold text-transparent sm:text-7xl bg-clip-text bg-gradient-to-r bg-grad">
+          <h1 class="font-sans text-5xl font-extrabold text-transparent sm:text-7xl bg-clip-text bg-gradient-to-r bg-grad">
             StormURL
           </h1>
         </div>

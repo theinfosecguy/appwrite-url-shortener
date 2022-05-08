@@ -7,6 +7,10 @@
   );
 }
 
+.font-sans {
+  font-family: sans-serif;
+}
+
 .search-bar {
   border: 2px solid #ff7a00;
   /* width: 40vw; */
